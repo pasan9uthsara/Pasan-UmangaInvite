@@ -257,7 +257,7 @@ body.invitation-locked{overflow:hidden}
   tick();
   setInterval(tick, 1000);
 })();
-const endpoint='YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL';
+const endpoint='https://script.google.com/macros/s/AKfycbwvieCd24-0UwPZuemELnomqf04fSXzQkyiWgkKiNe79Bv5mPJ2Of7qTFCVBTbL2ehA/exec';
 async function send(form,type){event.preventDefault();if(endpoint.startsWith('YOUR_')){alert('Please add your Google Apps Script Web App URL in index.html first.');return}const fd=new FormData(form);fd.append('type',type);try{await fetch(endpoint,{method:'POST',body:fd,mode:'no-cors'});form.reset();alert('Thank you! Your response has been sent.')}catch(e){alert('Please try again.')}}
 document.getElementById('rsvpForm').addEventListener('submit',e=>send(document.getElementById('rsvpForm'),'rsvp'));
 document.getElementById('guestbookForm').addEventListener('submit',e=>send(document.getElementById('guestbookForm'),'guestbook'));
